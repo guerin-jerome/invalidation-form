@@ -1,18 +1,30 @@
-export const PersonForm = () => (
-  <>
-    <h2>Person informations</h2>
-    <form>
-      <label>
-        First Name
-        <input type="text" name="firstName" />
-      </label>
+import { useForm } from "react-hook-form";
+import { TPersonForm } from "../../types/containers/Identity";
+import { usePersonForm } from "../../hooks/usePersonForm";
 
-      <label>
-        Last Name
-        <input type="text" name="lastName" />
-      </label>
+export const PersonForm = () => {
+  const { onSubmitPersonForm } = usePersonForm();
+  const { register, handleSubmit } = useForm<TPersonForm>({});
 
-      <button type="submit">Validate</button>
-    </form>
-  </>
-);
+  const firstNameInput = register("firstName");
+  const lastNameInput = register("lastName");
+
+  return (
+    <>
+      <h2>Person informations</h2>
+      <form onSubmit={handleSubmit(onSubmitPersonForm)}>
+        <label>
+          First Name
+          <input type="text" {...firstNameInput} />
+        </label>
+
+        <label>
+          Last Name
+          <input type="text" {...lastNameInput} />
+        </label>
+
+        <button type="submit">Validate</button>
+      </form>
+    </>
+  );
+};
