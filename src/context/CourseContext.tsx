@@ -15,7 +15,7 @@ const initialInputs = {
   firstName: "",
   lastName: "",
   birthDate: new Date(),
-  birthCity: "",
+  birthPlace: "",
   work: "",
   workDetails: "",
 };

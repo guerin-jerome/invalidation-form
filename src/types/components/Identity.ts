@@ -3,7 +3,9 @@ export type TPersonForm = {
   lastName: string;
 };
 
+export type TBirthValues = "Paris" | "Marseille" | "Lyon";
+
 export type TBirthForm = {
   birthDate: Date;
-  birthCity: string;
+  birthPlace: TBirthValues;
 };
