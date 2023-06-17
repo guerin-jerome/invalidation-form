@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { CourseContext } from "./context/CourseContext";
-import { Course } from "./containers/Course";
+import { Router } from "./routes/Router";
 import "./global.css";
 
 const root = ReactDOM.createRoot(
@@ -9,6 +9,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <CourseContext>
-    <Course />
+    <Router />
   </CourseContext>
 );

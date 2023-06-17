@@ -1,18 +1,30 @@
-export const WorkForm = () => (
-  <>
-    <h2>Work informations</h2>
-    <form>
-      <label>
-        Denomination
-        <input type="text" name="denomination" />
-      </label>
+import { useForm } from "react-hook-form";
+import { TWorkForm } from "../../types/components/Work";
+import { useWorkForm } from "../../hooks/useWorkForm";
 
-      <label>
-        Details
-        <textarea name="details" rows={5} cols={33} />
-      </label>
+export const WorkForm = () => {
+  const { onSubmitWorkForm } = useWorkForm();
+  const { register, handleSubmit } = useForm<TWorkForm>({});
 
-      <button type="submit">Validate</button>
-    </form>
-  </>
-);
+  const workInput = register("work");
+  const workDetailsInput = register("workDetails");
+
+  return (
+    <>
+      <h2>Work informations</h2>
+      <form onSubmit={handleSubmit(onSubmitWorkForm)}>
+        <label>
+          Denomination
+          <input type="text" {...workInput} />
+        </label>
+
+        <label>
+          Details
+          <textarea {...workDetailsInput} rows={5} cols={33} />
+        </label>
+
+        <button type="submit">Validate</button>
+      </form>
+    </>
+  );
+};

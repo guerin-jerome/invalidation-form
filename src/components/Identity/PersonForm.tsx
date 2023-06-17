@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { TPersonForm } from "../../types/containers/Identity";
+import { TPersonForm } from "../../types/components/Identity";
 import { usePersonForm } from "../../hooks/usePersonForm";
 
 export const PersonForm = () => {

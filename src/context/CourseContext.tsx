@@ -33,12 +33,15 @@ export const CourseContext = ({ children }: { children: React.ReactNode }) => {
   const [data, setData] = useState<TCourseData>({ ...initialData });
   const [inputs, setInputs] = useState<TCourseInputs>({ ...initialInputs });
 
-  const stateContext = {
-    data,
-    setData,
-    inputs,
-    setInputs,
-  };
+  const stateContext = useMemo(
+    () => ({
+      data,
+      setData,
+      inputs,
+      setInputs,
+    }),
+    [data, inputs]
+  );
 
   return (
     <CourseReactContext.Provider value={stateContext}>

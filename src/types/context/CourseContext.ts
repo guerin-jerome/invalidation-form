@@ -1,4 +1,6 @@
 import { Dispatch } from "react";
+import { TBirthForm, TPersonForm } from "../components/Identity";
+import { TWorkForm } from "../components/Work";
 
 export type TCourseData = {
   isPersonFormValid: boolean;
@@ -6,14 +8,7 @@ export type TCourseData = {
   isWorkFormValid: boolean;
 };
 
-export type TCourseInputs = {
-  firstName: string;
-  lastName: string;
-  birthDate: Date;
-  birthCity: string;
-  work: string;
-  workDetails: string;
-};
+export type TCourseInputs = TPersonForm & TBirthForm & TWorkForm;
 
 export type TCourseContext = {
   data: TCourseData;

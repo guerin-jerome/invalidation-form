@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { TUsePersonForm } from "../types/hooks/usePersonForm";
 import { CourseReactContext } from "../context/CourseContext";
 import { TCourseData } from "../types/context/CourseContext";
+import { TUseWorkForm } from "../types/hooks/useWorkForm";
 
-export const usePersonForm = (): TUsePersonForm => {
+export const useWorkForm = (): TUseWorkForm => {
   const { setData } = useContext(CourseReactContext);
 
-  const onSubmitPersonForm = () => {
+  const onSubmitWorkForm = () => {
     setData((currentData: TCourseData) => ({
       ...currentData,
-      isPersonFormValid: true,
+      isWorkFormValid: true,
     }));
   };
 
-  return { onSubmitPersonForm };
+  return { onSubmitWorkForm };
 };
