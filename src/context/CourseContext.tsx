@@ -5,17 +5,17 @@ import {
   TCourseInputs,
 } from "../types/context/CourseContext";
 
-const initialData = {
+const initialData: TCourseData = {
   isPersonFormValid: false,
   isBirthFormValid: false,
   isWorkFormValid: false,
 };
 
-const initialInputs = {
+const initialInputs: TCourseInputs = {
   firstName: "",
   lastName: "",
   birthDate: new Date(),
-  birthPlace: "",
+  birthPlace: "Paris",
   work: "",
   workDetails: "",
 };
